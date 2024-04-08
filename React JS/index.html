@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<!-- Include Babel for JSX translation -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = () => (
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            I'm a title
+        </h3>
+    );
+    const Button = () => (
+        <button style={{ backgroundColor: "tomato" }} onClick={() => console.log("Clicked!")}>
+            Click me
+        </button>
+    );
+
+    // Correctly pass Title and Button as children in an array to the container div
+    const Container = () => (
+        <div>
+            <Title />
+            <Button />
+        </div>
+    );
+    ReactDOM.render(<Container />, root);
+</script>
+</html>
