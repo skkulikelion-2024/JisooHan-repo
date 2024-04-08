@@ -1,2 +1,3 @@
-이름: 한지수
-기수: 12기
+week1: JavaScript
+week2: JavaScript
+week2: ReactJS
